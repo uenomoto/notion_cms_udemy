@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -20,10 +21,12 @@ export const SinglePost = (props: Props) => {
       {isPagenationPage ? (
         <section className="bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-2 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
           <div className="lg:flex items-center justify-between">
-            <img
+            <Image
               className="w-72 h-52 object-cover mx-auto rounded-md bg-cover"
               src={image}
               alt={title}
+              width={288}
+              height={208}
             />
             <div className="text-center">
               <h2 className="text-gray-100 text-2xl font-medium mb-2">
@@ -50,7 +53,7 @@ export const SinglePost = (props: Props) => {
         <section className=" bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-0 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
           <div className="lg:flex items-center">
             <h2 className="text-gray-100 text-2xl font-medium mb-2">
-              <img
+              <Image
                 className="w-full h-20 object-cover mb-4 rounded-t-md"
                 src={image}
                 alt={title}
