@@ -68,8 +68,8 @@ const BlogPageList = ({ postsByPage, numberOfPage, allTags }) => {
 
       <Motions>
         <div className="container w-full mt-16">
-          <h1 className="text-5xl font-medium text-center mb-16">
-            Notion Blog🚀
+          <h1 className="text-2xl font-black text-center mb-16 md:text-5xl">
+            上野のプログラミング奮闘記！
           </h1>
           <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
             {postsByPage.map((post) => (
