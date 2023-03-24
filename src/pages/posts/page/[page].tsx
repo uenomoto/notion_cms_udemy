@@ -12,7 +12,7 @@ import { SinglePost } from "../../../../components/Post/SinglePost";
 import { Pagination } from "../../../../components/Pagination/Pagination";
 import { Tag } from "../../../../components/Tag/Tag";
 import { motion } from "framer-motion";
-import { Motions } from "../../../utils/motions";
+import { Motions } from "../../../utils/Motions";
 
 // 動的なページ数のために必要なロジック
 export const getStaticPaths: GetStaticPaths = async () => {

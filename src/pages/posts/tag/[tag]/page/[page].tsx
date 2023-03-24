@@ -12,7 +12,7 @@ import {
 import { SinglePost } from "../../../../../../components/Post/SinglePost";
 import { Pagination } from "../../../../../../components/Pagination/Pagination";
 import { Tag } from "../../../../../../components/Tag/Tag";
-import { Motions } from "../../../../../utils/motions";
+import { Motions } from "../../../../../utils/Motions";
 
 //動的に画面に変える時に必須君↓タグに応じて
 export const getStaticPaths: GetStaticPaths = async () => {

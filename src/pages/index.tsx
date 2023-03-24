@@ -4,7 +4,7 @@ import Link from "next/link";
 import { SinglePost } from "../../components/Post/SinglePost";
 import { Tag } from "../../components/Tag/Tag";
 import { getAllTags, getPostsTopPage } from "../../lib/notionAPI";
-import { Motions } from "../utils/motions";
+import { Motions } from "../utils/Motions";
 
 // 4つずつデータを取得↓
 export const getStaticProps: GetStaticProps = async () => {
