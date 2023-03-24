@@ -45,6 +45,16 @@ const getPageMetaData = (post) => {
     return allTags;
   };
 
+  // 画像が存在しない場合や空の配列の場合のための条件付き処理
+  const getImageUrl = (image) => {
+    const defaultImageUrl = "/default-image.png"; //nullの場合の代替画像
+    if (image && image.files && image.files.length > 0) {
+      return image.files[0].file.url;
+    } else {
+      return defaultImageUrl; // 画像がない場合の代替画像
+    }
+  };
+
   return {
     id: post.id,
     title: post.properties.Name.title[0].plain_text,
@@ -52,6 +62,7 @@ const getPageMetaData = (post) => {
     date: post.properties.Date.date.start,
     slug: post.properties.Slug.rich_text[0].plain_text,
     tags: getTags(post.properties.Tags.multi_select),
+    image: getImageUrl(post.properties.Image),
   };
 };
 

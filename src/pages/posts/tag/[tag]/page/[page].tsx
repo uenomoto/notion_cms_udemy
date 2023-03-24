@@ -69,8 +69,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       currentTag,
       allTags,
     },
-    // ISRを使用、6時間ごとに画面（HTML）を更新する。
-    revalidate: 60 * 60 * 6,
+    // ISRを使用、30秒ごとに画面（HTML）を更新する。
+    revalidate: 30,
   };
 };
 
@@ -90,7 +90,7 @@ const BlogTagPageList = ({ numberOfPageByTag, posts, currentTag, allTags }) => {
         <h1 className="md:text-5xl text-2xl font-medium text-center mb-16">
           {currentTag}関連記事🐥
         </h1>
-        <section className="sm:grid grid-cols-2 w-5/6 gap-3 mx-auto">
+        <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
           {posts.map((post) => (
             <div key={post.id}>
               <SinglePost
@@ -99,6 +99,7 @@ const BlogTagPageList = ({ numberOfPageByTag, posts, currentTag, allTags }) => {
                 date={post.date}
                 tags={post.tags}
                 slug={post.slug}
+                image={post.image}
                 isPagenationPage={true}
               />
             </div>

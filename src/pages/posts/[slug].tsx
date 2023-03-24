@@ -28,14 +28,14 @@ export const getStaticProps = async ({ params }) => {
     props: {
       post,
     },
-    // ISRを使用、6時間ごとに画面（HTML）を更新する。
-    revalidate: 60 * 60 * 6,
+    // ISRを使用、30秒ごとに画面（HTML）を更新する。
+    revalidate: 30,
   };
 };
 
 const Post = ({ post }) => {
   return (
-    <section className="container lg:px-2 px-5 h-screen lg:w-2/5 mx-auto mt-20 mb-10">
+    <section className="container lg:px-2 px-5 lg:w-1/2 mx-auto mt-20 mb-10">
       <h2 className="w-full text-2xl font-medium">{post.metadata.title}</h2>
       <div className="border-b-2 w-1/3 mt-1 border-sky-900"></div>
       <span className="text-gray-500">投稿日： {post.metadata.date}</span>
@@ -51,18 +51,18 @@ const Post = ({ post }) => {
       <div className="mt-10 font-medium">
         {/* コードをマークダウンにしてcodeを見やすくする。 */}
         <ReactMarkdown
-          children={post.markdown}
           components={{
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
               return !inline && match ? (
                 <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, "")}
                   style={oneDark}
                   language={match[1]}
                   PreTag="div"
                   {...props}
-                />
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>
               ) : (
                 <code className={className} {...props}>
                   {children}
@@ -70,10 +70,14 @@ const Post = ({ post }) => {
               );
             },
           }}
-        ></ReactMarkdown>
+        >
+          {post.markdown}
+        </ReactMarkdown>
 
-        <Link href="/">
-          <span className="pb-20 block mt-3 text-sky-600">←ホームに戻る</span>
+        <Link href="/" className="mt-8 mx-auto rounded-2xl text-right block">
+          <span className="mt-3 bg-sky-400 p-3 rounded-3xl text-xl text-white hover:bg-sky-700 transition duration-300">
+            ←ホームに戻る
+          </span>
         </Link>
       </div>
     </section>

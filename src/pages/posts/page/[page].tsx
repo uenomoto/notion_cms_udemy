@@ -47,8 +47,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       numberOfPage,
       allTags,
     },
-    // ISRを使用、6時間ごとに画面（HTML）を更新する。
-    revalidate: 60 * 60 * 6,
+    // ISRを使用、30秒ごとに画面（HTML）を更新する。
+    revalidate: 30,
   };
 };
 
@@ -68,7 +68,7 @@ const BlogPageList = ({ postsByPage, numberOfPage, allTags }) => {
         <h1 className="text-5xl font-medium text-center mb-16">
           Notion Blog🚀
         </h1>
-        <section className="sm:grid grid-cols-2 w-5/6 gap-3 mx-auto">
+        <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
           {postsByPage.map((post) => (
             <div key={post.id}>
               <SinglePost
@@ -77,6 +77,7 @@ const BlogPageList = ({ postsByPage, numberOfPage, allTags }) => {
                 date={post.date}
                 tags={post.tags}
                 slug={post.slug}
+                image={post.image}
                 isPagenationPage={true}
               />
             </div>

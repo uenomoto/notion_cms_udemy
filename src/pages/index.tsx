@@ -7,21 +7,21 @@ import { getAllTags, getPostsTopPage } from "../../lib/notionAPI";
 
 // 4つずつデータを取得↓
 export const getStaticProps: GetStaticProps = async () => {
-  const fourPosts = await getPostsTopPage(4);
+  const sixPosts = await getPostsTopPage(4);
   const allTags = await getAllTags();
 
   return {
     props: {
-      fourPosts,
+      sixPosts,
       allTags,
     },
-    // ISRを使用、6時間ごとに画面（HTML）を更新する。
-    revalidate: 60 * 60 * 6,
+    // ISRを使用、30秒ごとに画面（HTML）を更新する。
+    revalidate: 30,
   };
 };
 
-export default function Home({ fourPosts, allTags }) {
-  // console.log(allPosts);
+export default function Home({ sixPosts, allTags }) {
+  // console.log(fourPosts);
   return (
     <div className="container h-full w-full mx-auto">
       <Head>
@@ -33,25 +33,30 @@ export default function Home({ fourPosts, allTags }) {
 
       <main className="container w-full mt-16">
         <h1 className="text-5xl font-medium text-center mb-16">
-          Notion Blog🚀
+          上野のプログラミング奮闘記！
         </h1>
-        {fourPosts.map((post) => (
-          <div className="mx-4" key={post.id}>
-            <SinglePost
-              title={post.title}
-              description={post.description}
-              date={post.date}
-              tags={post.tags}
-              slug={post.slug}
-              isPagenationPage={false}
-            />
-          </div>
-        ))}
+        <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
+          {sixPosts.map((post) => (
+            <div key={post.id}>
+              <SinglePost
+                title={post.title}
+                description={post.description}
+                date={post.date}
+                tags={post.tags}
+                slug={post.slug}
+                image={post.image}
+                isPagenationPage={true}
+              />
+            </div>
+          ))}
+        </section>
         <Link
           href="/posts/page/1"
-          className="mb-6 lg:w-1/2 mx-auto rounded-md px-5 block text-right"
+          className="mb-6 lg:w-2/2 mx-auto rounded-md px-5 text-right block"
         >
-          もっと見ろ
+          <span className="bg-sky-400 p-3 rounded-3xl text-xl text-white hover:bg-sky-700 transition duration-300">
+            一覧はこちら
+          </span>
         </Link>
         <Tag tags={allTags} />
       </main>
