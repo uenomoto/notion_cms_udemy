@@ -16,8 +16,8 @@ export const getStaticProps: GetStaticProps = async () => {
       sixPosts,
       allTags,
     },
-    // ISRを使用、30秒ごとに画面（HTML）を更新する。
-    revalidate: 30,
+    // ISRを使用、10秒ごとに画面（HTML）を更新する。
+    revalidate: 60 * 60 * 12,
   };
 };
 

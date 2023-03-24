@@ -2,6 +2,7 @@ import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { NUMBER_OF_POSTS_PER_PAGE } from "../constants/constants";
 
+// ノーションのトークンをenvファイルで隠して指定
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });

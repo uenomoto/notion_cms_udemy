@@ -29,7 +29,7 @@ export const getStaticProps = async ({ params }) => {
       post,
     },
     // ISRを使用、10秒ごとに画面（HTML）を更新する。
-    revalidate: 10,
+    revalidate: 60 * 60 * 12,
   };
 };
 

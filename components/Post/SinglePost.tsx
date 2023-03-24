@@ -54,9 +54,11 @@ export const SinglePost = (props: Props) => {
           <div className="lg:flex items-center">
             <h2 className="text-gray-100 text-2xl font-medium mb-2">
               <Image
-                className="w-full h-20 object-cover mb-4 rounded-t-md"
+                className="w-72 h-52 object-cover mb-4 rounded-t-md"
                 src={image}
                 alt={title}
+                width={288}
+                height={208}
               />
             </h2>
             <div className="text-gray-400 mr-2">投稿日: {date}</div>
