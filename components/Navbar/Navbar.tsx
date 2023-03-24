@@ -10,7 +10,7 @@ export const Navbar = () => {
         <img src="/image1.png" className="md:w-64 md:h-64 w-32 h-32 mx-auto" />
       </div>
       <div className="container flex items-center justify-between mx-auto">
-        <Link href="/" className="md:text-2xl font-bold">
+        <Link href="/" className="font-bold md:text-2xl">
           エンジニアへの道のり🐣
         </Link>
         <div>

@@ -18,7 +18,7 @@ export const SinglePost = (props: Props) => {
   return (
     <>
       {isPagenationPage ? (
-        <section className="bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-5 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
+        <section className="bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-2 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
           <div className="lg:flex items-center justify-between">
             <img
               className="w-72 h-52 object-cover mx-auto rounded-md bg-cover"
@@ -32,7 +32,7 @@ export const SinglePost = (props: Props) => {
                   {title}
                 </Link>
               </h2>
-              <div className="text-gray-400 mr-2 mb-4 text-md">
+              <div className="text-gray-400 mr-2 mb-2 text-md">
                 投稿日: {date}
               </div>
               {tags.map((tag: string, index: number) => (
@@ -47,7 +47,7 @@ export const SinglePost = (props: Props) => {
           </div>
         </section>
       ) : (
-        <section className=" bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-5 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
+        <section className=" bg-gradient-to-r from-sky-700 to-indigo-500 mb-8 mx-auto rounded-md p-0 shadow-2xl shadow-sky-500 hover:shadow-none hover:translate-y-1 transition-all duration-300">
           <div className="lg:flex items-center">
             <h2 className="text-gray-100 text-2xl font-medium mb-2">
               <img

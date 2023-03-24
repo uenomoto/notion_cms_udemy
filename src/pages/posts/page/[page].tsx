@@ -11,6 +11,8 @@ import {
 import { SinglePost } from "../../../../components/Post/SinglePost";
 import { Pagination } from "../../../../components/Pagination/Pagination";
 import { Tag } from "../../../../components/Tag/Tag";
+import { motion } from "framer-motion";
+import { Motions } from "../../../utils/motions";
 
 // 動的なページ数のために必要なロジック
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -64,28 +66,30 @@ const BlogPageList = ({ postsByPage, numberOfPage, allTags }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container w-full mt-16">
-        <h1 className="text-5xl font-medium text-center mb-16">
-          Notion Blog🚀
-        </h1>
-        <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
-          {postsByPage.map((post) => (
-            <div key={post.id}>
-              <SinglePost
-                title={post.title}
-                description={post.description}
-                date={post.date}
-                tags={post.tags}
-                slug={post.slug}
-                image={post.image}
-                isPagenationPage={true}
-              />
-            </div>
-          ))}
-        </section>
-        <Pagination numberOfPage={numberOfPage} tag={""} />
-        <Tag tags={allTags} />
-      </main>
+      <Motions>
+        <div className="container w-full mt-16">
+          <h1 className="text-5xl font-medium text-center mb-16">
+            Notion Blog🚀
+          </h1>
+          <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
+            {postsByPage.map((post) => (
+              <div key={post.id}>
+                <SinglePost
+                  title={post.title}
+                  description={post.description}
+                  date={post.date}
+                  tags={post.tags}
+                  slug={post.slug}
+                  image={post.image}
+                  isPagenationPage={true}
+                />
+              </div>
+            ))}
+          </section>
+          <Pagination numberOfPage={numberOfPage} tag={""} />
+          <Tag tags={allTags} />
+        </div>
+      </Motions>
     </div>
   );
 };

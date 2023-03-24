@@ -12,6 +12,7 @@ import {
 import { SinglePost } from "../../../../../../components/Post/SinglePost";
 import { Pagination } from "../../../../../../components/Pagination/Pagination";
 import { Tag } from "../../../../../../components/Tag/Tag";
+import { Motions } from "../../../../../utils/motions";
 
 //動的に画面に変える時に必須君↓タグに応じて
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -86,28 +87,30 @@ const BlogTagPageList = ({ numberOfPageByTag, posts, currentTag, allTags }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container w-full mt-16">
-        <h1 className="md:text-5xl text-2xl font-medium text-center mb-16">
-          {currentTag}関連記事🐥
-        </h1>
-        <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
-          {posts.map((post) => (
-            <div key={post.id}>
-              <SinglePost
-                title={post.title}
-                description={post.description}
-                date={post.date}
-                tags={post.tags}
-                slug={post.slug}
-                image={post.image}
-                isPagenationPage={true}
-              />
-            </div>
-          ))}
-        </section>
-        <Pagination numberOfPage={numberOfPageByTag} tag={currentTag} />
-        <Tag tags={allTags} />
-      </main>
+      <Motions>
+        <main className="container w-full mt-16">
+          <h1 className="md:text-5xl text-2xl font-medium text-center mb-16">
+            {currentTag}関連記事🐥
+          </h1>
+          <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
+            {posts.map((post) => (
+              <div key={post.id}>
+                <SinglePost
+                  title={post.title}
+                  description={post.description}
+                  date={post.date}
+                  tags={post.tags}
+                  slug={post.slug}
+                  image={post.image}
+                  isPagenationPage={true}
+                />
+              </div>
+            ))}
+          </section>
+          <Pagination numberOfPage={numberOfPageByTag} tag={currentTag} />
+          <Tag tags={allTags} />
+        </main>
+      </Motions>
     </div>
   );
 };
