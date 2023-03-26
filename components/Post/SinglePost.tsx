@@ -38,6 +38,7 @@ export const SinglePost = (props: Props) => {
               <div className="text-gray-400 mr-2 mb-2 text-md">
                 投稿日: {date}
               </div>
+              <div className="text-xs text-gray-300 mb-1">{description}</div>
               {tags.map((tag: string, index: number) => (
                 <span
                   className="text-white bg-gray-500 text-xs rounded-xl px-2 pb-1 font-medium mr-2 hover:bg-sky-700"
