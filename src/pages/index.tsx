@@ -31,9 +31,16 @@ export default function Home({ sixPosts, allTags }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@motoki_1995" />
-        <meta name="twitter:title" content="今後の学習スタイル" />
-        <meta name="twitter:description" content="4.記事の概要" />
-        <meta name="twitter:image" content="/image3.png" />
+        <meta name="twitter:domain" content="uemoto-notion.vercel.app" />
+        <meta name="twitter:title" content="アウトプットサイト" />
+        <meta
+          name="twitter:description"
+          content="このサイトはエンジニア未経験転職を目指す人のサイトです。"
+        />
+        <meta
+          name="twitter:image"
+          content="https://uemoto-notion.vercel.app/image3.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
