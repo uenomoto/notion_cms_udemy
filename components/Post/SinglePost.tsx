@@ -31,7 +31,10 @@ export const SinglePost = (props: Props) => {
             <div className="text-center">
               <h2 className="text-gray-100 text-2xl font-medium mb-2">
                 {/* titleを押すと遷移するaタグだからインライン要素なので子要素がないように！ */}
-                <Link href={`/posts/${slug}`} className="animate-pulse text-lg">
+                <Link
+                  href={`/posts/${slug}`}
+                  className="animate-pulse text-lg text-gray-900"
+                >
                   {title}
                 </Link>
               </h2>
@@ -70,7 +73,10 @@ export const SinglePost = (props: Props) => {
               >
                 <Link href={`/posts/tag/${tag}/page/1`}>{tag}</Link>
                 {/* titleを押すと遷移するaタグだからインライン要素なので子要素がないように！ */}
-                <Link href={`/posts/${slug}`} className="animate-pulse ">
+                <Link
+                  href={`/posts/${slug}`}
+                  className="animate-pulse text-gray-900"
+                >
                   {title}
                 </Link>
               </span>
