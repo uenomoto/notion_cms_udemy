@@ -41,13 +41,13 @@ const Post = ({ post }) => {
       transition={{ duration: 0.6, delay: 0.5 }}
     >
       <section className="container lg:px-2 px-5 lg:w-1/2 mx-auto mt-20 mb-10">
-        <h2 className="w-full text-2xl font-medium">{post.metadata.title}</h2>
+        <h2 className="w-full text-2xl font-bold">{post.metadata.title}</h2>
         <div className="border-b-2 w-1/3 mt-1 border-sky-900"></div>
         <span className="text-gray-500">投稿日： {post.metadata.date}</span>
         <br />
         {post.metadata.tags.map((tag: string, index: number) => (
           <p
-            className="text-white bg-sky-900 rounded-xl font-medium mt-2 px-2 inline-block mr-2"
+            className="text-white bg-sky-900 rounded-2xl font-medium mt-2 px-2 inline-block mr-2"
             key={index}
           >
             <Link href={`/posts/tag/${tag}/page/1`}>{tag}</Link>
