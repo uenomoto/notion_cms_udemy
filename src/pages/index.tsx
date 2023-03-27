@@ -32,7 +32,7 @@ export default function Home({ sixPosts, allTags }) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@motoki_1995" />
         <meta name="twitter:domain" content="uemoto-notion.vercel.app" />
-        <meta name="twitter:title" content="アウトプットサイト" />
+        <meta name="twitter:title" content="プログラミング奮闘生活！" />
         <meta
           name="twitter:description"
           content="このサイトはエンジニア未経験転職を目指す人のサイトです。"
