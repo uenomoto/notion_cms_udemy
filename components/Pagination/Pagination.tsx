@@ -21,10 +21,10 @@ export const Pagination = (props: Props) => {
     <section className="mb-8 lg:w-1/2 mx-auto rounded-md p-5">
       <ul className="flex items-center justify-center gap-4">
         {pages.map((page) => (
-          <li className="bg-sky-900 rounded-lg w-6 h-8 relative" key={page}>
+          <li className="bg-sky-900 rounded-lg h-8 px-5 relative" key={page}>
             <Link
               href={getPageLink(tag, page)}
-              className="absolute text-xl top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-gray-100"
+              className="absolute px-3 text-xl top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-gray-100"
             >
               {page}
             </Link>

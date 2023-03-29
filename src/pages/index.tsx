@@ -49,8 +49,8 @@ export default function Home({ sixPosts, allTags }) {
           <h1 className="text-2xl font-black text-center mb-16 md:text-5xl">
             上野のプログラミング奮闘生活！
           </h1>
-          <p className="m-0 text-center text-red-600">
-            ※ふわふわ点滅してるボタンを押してください🙇‍♂️
+          <p className="m-0 text-center text-green-600">
+            ※どこを押してもリンク飛べるようにしました。🙇‍♂️
           </p>
           <section className="sm:grid lg:grid-cols-2 md:grid-cols-2 w-5/6 gap-4 xl:w-8/12 mx-auto">
             {sixPosts.map((post) => (
