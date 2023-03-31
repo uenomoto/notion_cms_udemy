@@ -46,9 +46,6 @@ export default function Home({ sixPosts, allTags }) {
 
       <Motions>
         <main className="container w-full mt-16">
-          <h1 className="text-2xl font-black text-center mb-16 md:text-5xl">
-            上野のプログラミング奮闘生活！
-          </h1>
           <p className="m-0 text-center text-green-600">
             ※どこを押してもリンク飛べるようにしました。🙇‍♂️
           </p>
