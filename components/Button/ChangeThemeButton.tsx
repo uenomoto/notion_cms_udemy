@@ -14,7 +14,7 @@ const ChangeThemeButton: FC = () => {
   return (
     <>
       <button
-        className="xl:text-4xl md:text-xl md:text-white sm:text-sky-900"
+        className="xl:text-4xl md:text-xl md:text-gray-900 sm:text-sky-900"
         aria-label="DarkModeToggle"
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

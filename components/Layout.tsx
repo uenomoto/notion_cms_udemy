@@ -13,10 +13,12 @@ export const Layout = ({ children }) => {
         />
         <img
           src="/2.png"
-          className="w-full h-full md:hidden min-375:block max-767:block mx-auto relative"
+          className="w-full h-full md:hidden min-320:block max-767:block mx-auto relative"
         />
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-1 grid xl:grid-cols-12 xl:w-12/12 xl:mx-auto">
+          {children}
+        </main>
         <Footer />
       </div>
     </Motions>

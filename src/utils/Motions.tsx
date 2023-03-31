@@ -39,7 +39,7 @@ export const Motions = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <div>
+    <div className="xl:col-span-12">
       <motion.div initial="initial" animate="animate" variants={animateBox}>
         {children}
       </motion.div>

@@ -38,11 +38,11 @@ export const getStaticProps = async ({ params }) => {
 const Post = ({ post }) => {
   return (
     <>
-      <Head>
-        <title>{post.metadata.title}</title>
-      </Head>
       <Motions>
-        <section className="container lg:px-2 px-5 lg:w-1/2 mx-auto mt-20 mb-10">
+        <Head>
+          <title>{post.metadata.title}</title>
+        </Head>
+        <section className="container lg:px-2 px-5 lg:w-2/2 mx-auto mt-20 mb-10">
           <h2 className="w-full text-2xl font-bold">{post.metadata.title}</h2>
           <div className="border-b-2 w-1/3 mt-1 border-sky-900"></div>
           <span className="text-gray-500">投稿日： {post.metadata.date}</span>
