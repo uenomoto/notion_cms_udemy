@@ -20,7 +20,7 @@ export const Motions = ({ children }: { children: ReactNode }) => {
   //     },
   //   },
   // };
-  // 下からふわっとアニメーション
+  // 下からふわっとアニメーションです
   const animateBox = {
     initial: {
       opacity: 0,
